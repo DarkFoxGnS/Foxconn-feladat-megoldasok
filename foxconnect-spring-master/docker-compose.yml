@@ -10,7 +10,7 @@ services:
       - POSTGRES_USER=root
       - POSTGRES_DB=demo
     volumes:
-      - postgres:/var/lib/postgresql/data
+      - postgres:/var/lib/postgresql/18/data
 
 volumes:
   postgres:
