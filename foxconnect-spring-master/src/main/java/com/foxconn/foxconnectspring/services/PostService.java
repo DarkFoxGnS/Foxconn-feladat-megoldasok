@@ -33,6 +33,12 @@ public class PostService {
 	//Done
 	
 	//Converts and saves the post. Returns the new post if completed without errors.
+	/*
+		Approach:
+			Maps the DTO to an entity, if the DTO was empty, the post will be empty, the conversion failed, return.
+			Saves the post trough Jakarta.
+			Returns the DTO.
+	*/
 	public PostDto addPost(PostDto postDto){
 		Post post = mapper.toEntity(postDto);
 		if (post == null){
@@ -43,6 +49,10 @@ public class PostService {
 	}
 	
 	//Returns all the posts currently in the database. As a list of PostDtos.
+	/*
+		Approach:
+			Finds all post in the database, maps them to become DTOs, returns the list.
+	*/
 	public List<PostDto> findAll(){
 		List<PostDto> posts = new ArrayList<>();
 		postRepository.findAll().forEach(post->posts.add(mapper.toDTO(post)));
@@ -50,6 +60,15 @@ public class PostService {
 	}
 	//Updates the post provided, by matching IDs.
 	//Returns the newly updated post.
+	/*
+		Approach:
+			For safety, convert the DTO to an entity.
+			Check if the post by the given ID exists.
+			Check if post title changed, if so update it.
+			Check if post body changed, if so update it.
+			Save the updates (Jakarta will update the same UUID objects)
+			Return the newly updated post.
+	*/
 	public PostDto editPost(PostDto editedPost){
 		Post newPost = mapper.toEntity(editedPost); //Convert to ensure safety uppon mapping changing.
 Post originalPost = postRepository.findById(newPost.getId())

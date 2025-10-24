@@ -19,6 +19,10 @@ public class PostMapper {
 	
 	//TODO: write a method to convert post from DTO to entity
 	//Done
+	/*
+		Approach:
+			the exact replica of the above found mapping, but opposite direction.
+	*/
 	public Post toEntity (PostDto post) {
 		if (post == null){
 			return null;

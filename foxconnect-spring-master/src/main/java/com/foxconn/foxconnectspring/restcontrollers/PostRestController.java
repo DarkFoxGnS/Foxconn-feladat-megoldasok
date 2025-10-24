@@ -1,4 +1,4 @@
-package com.foxconn.foxconnectspring.restcontrollers;
+Approach com.foxconn.foxconnectspring.restcontrollers;
 
 import com.foxconn.foxconnectspring.dtos.PostDto;
 import com.foxconn.foxconnectspring.services.PostService;
@@ -37,10 +37,19 @@ public class PostRestController {
 		"body":"<body here>"
 	}
 	**/
+	/*
+		Approach:
+			The validity check should fail if the DTO is invalid or not as expected.
+			Followed the standard already existing and passed the DTO to the post service.
+			The returning of the newly created DTO should allow the frontend to update post confirmation.
+	*/
 	@PostMapping("/add")
 	public PostDto addPost(@RequestBody PostDto post){
 		if (post.checkValidity(false)){
-			return postService.addPost(post);
+			PostDto dto = postService.addPost(post);
+			if (dto == null){
+				throw new InternalError("postService failed to add the post.");
+			}
 		}
 		throw new InternalError("Id was provided in the request");
 	}
@@ -48,6 +57,10 @@ public class PostRestController {
     //TODO: write a method that returns a list of all posts
 	//Done
 	//Returns a list of PostDtos to the client.
+	/*
+		Approach:
+			Once again, the call is simply passed down to the PostService.
+	*/
 	@GetMapping("/all")
 	public List<PostDto> getAll (){
 		return postService.findAll();
@@ -63,6 +76,12 @@ public class PostRestController {
 	}
 	**/
 	//Returns the updated PostDto on success.
+	/*
+		Approach:
+			After validating the DTO, and ensuring it has an ID.
+			The DTO is passed down into the PostService.
+			The returned DTO allows the client to update the UI post update.
+	*/
 	@PatchMapping("/update")
 	public PostDto editPost(@RequestBody PostDto post){
 		if (post.checkValidity(true)){
