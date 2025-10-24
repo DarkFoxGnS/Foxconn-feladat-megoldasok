@@ -1,2 +1,2 @@
 CREATE VIEW CurrentOrderValue AS
-SELECT CustomerCompanyName, ModelName, (OrderQty * BasePrice) as TotalAmount FROM Orders INNER JOIN ServerModels ON Orders.modelID = ServerModels.ModellD WHERE Processed = 0;
+SELECT CustomerCompanyName, ModelName,OrderQty, (OrderQty * BasePrice) as TotalAmount FROM Orders INNER JOIN ServerModels ON Orders.modelID = ServerModels.ModellD WHERE Processed = 0;
