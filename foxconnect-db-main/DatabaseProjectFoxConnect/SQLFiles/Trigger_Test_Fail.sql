@@ -1,0 +1,1 @@
+UPDATE ServerModels SET Available = -1 WHERE ModellD = 1;
