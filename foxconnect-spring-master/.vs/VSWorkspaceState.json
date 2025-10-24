@@ -1,0 +1,19 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\main",
+    "\\src\\main\\java",
+    "\\src\\main\\java\\com",
+    "\\src\\main\\java\\com\\foxconn",
+    "\\src\\main\\java\\com\\foxconn\\foxconnectspring",
+    "\\src\\main\\java\\com\\foxconn\\foxconnectspring\\entities",
+    "\\src\\test",
+    "\\src\\test\\java",
+    "\\src\\test\\java\\com",
+    "\\src\\test\\java\\com\\foxconn",
+    "\\src\\test\\java\\com\\foxconn\\foxconnectspring"
+  ],
+  "SelectedNode": "\\src\\test\\java\\com\\foxconn\\foxconnectspring\\FoxconnectSpringApplicationTests.java",
+  "PreviewInSolutionExplorer": false
+}
