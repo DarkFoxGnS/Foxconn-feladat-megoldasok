@@ -16,6 +16,18 @@ public class PostMapper {
         dto.setBody(entity.getBody());
         return dto;
     }
-
-    //TODO: write a method to convert post from DTO to entity
+	
+	//TODO: write a method to convert post from DTO to entity
+	//Done
+	public Post toEntity (PostDto post) {
+		if (post == null){
+			return null;
+		}
+		Post entity = new Post();
+		entity.setId(post.getId());
+		entity.setTitle(post.getTitle());
+		entity.setBody(post.getBody());
+		return entity;
+	}
+    
 }

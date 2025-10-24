@@ -1,0 +1,21 @@
+Taskmap:
+	FoxconnectSpringApplication:
+		-boots up spring
+	PostRestController:
+		-Handles HTTP requests
+		-calls PostService to get posts.
+	PostService:
+		-Wraps the PostRepository and the PostMapper.
+	PostRepository:
+		-Interface for JPARepository (Jakarta)
+	PostMapper:
+		-Provides tools to convert data.
+	Post:
+		-Jakarta file to denote the database entities.
+	PostDto:
+		-Jakarta file to denote the HTML entities
+
+/posts/{id} -> returns the post with the UUID.
+/posts/add -> create new post. Returns true or false based on success.
+/posts/all -> return all existing posts.
+/posts/update -> updates the post defined by the id in the request body. Returns the newly edited post.
