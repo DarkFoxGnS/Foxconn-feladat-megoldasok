@@ -50,3 +50,5 @@ We want all users to be happy with the system. Testing is therefore an essential
 <hr>
 
 ### 🍀 We wish you good luck, hope you'll enjoy the exercise. 🤞
+
+Complete time taken: ~ 4 hours.
