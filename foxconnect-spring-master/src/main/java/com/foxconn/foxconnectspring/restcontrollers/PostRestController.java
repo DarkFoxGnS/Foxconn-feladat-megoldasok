@@ -36,11 +36,13 @@ public class PostRestController {
 		"title":"<title here>",
 		"body":"<body here>"
 	}
-	Note: The ID would be thrown away.
 	**/
 	@PostMapping("/add")
-	public Boolean addPost(@RequestBody PostDto post){
-		return postService.addPost(post);
+	public PostDto addPost(@RequestBody PostDto post){
+		if (post.checkValidity(false)){
+			return postService.addPost(post);
+		}
+		throw new InternalError("Id was provided in the request");
 	}
 
     //TODO: write a method that returns a list of all posts
@@ -53,9 +55,19 @@ public class PostRestController {
 	
     //TODO: Write a method to update a post by ID (@PatchMapping)
 	//Done
+	/**Expected request body as:
+	{
+		"id":"<id here>".
+		"title":"<title here>",
+		"body":"<body here>"
+	}
+	**/
 	//Returns the updated PostDto on success.
 	@PatchMapping("/update")
 	public PostDto editPost(@RequestBody PostDto post){
-		return postService.editPost(post);
+		if (post.checkValidity(true)){
+			return postService.editPost(post);
+		}
+		throw new InternalError("Id was not provided in the request");
 	}
 }

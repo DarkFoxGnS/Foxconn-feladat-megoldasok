@@ -32,14 +32,14 @@ public class PostService {
 	//TODO: write the methods needed for the endpoints of the controller class
 	//Done
 	
-	//Converts and saves the post. Returns true if completed without errors.
-	public Boolean addPost(PostDto postDto){
+	//Converts and saves the post. Returns the new post if completed without errors.
+	public PostDto addPost(PostDto postDto){
 		Post post = mapper.toEntity(postDto);
 		if (post == null){
-			return false;
+			return null;
 		}
 		postRepository.save(post);
-		return true;
+		return postDto;
 	}
 	
 	//Returns all the posts currently in the database. As a list of PostDtos.
