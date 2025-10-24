@@ -83,6 +83,6 @@ Create an SQL Agent Job (or a suitable scheduling mechanism for the database use
 
 <hr>
 
-Time spent on this project: [should be filled by you]
+Time spent on this project: 2 hours.
 
 ### 🍀 We wish you good luck, hope you'll enjoy the exercise. 🤞
