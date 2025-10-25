@@ -1,5 +1,4 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query'
-import { z } from 'zod'
 
 import { apiClient } from '@/utils/api'
 import type { MutationConfig } from '@/utils/query'
@@ -34,5 +33,4 @@ const useDeletePost = ({ mutationConfig }: UseDeletePostOptions = {}) => {
   })
 }
 
-export type { DeletePostSchema }
-export { deletePostSchema, deletePost, useDeletePost }
+export {deletePost, useDeletePost }
